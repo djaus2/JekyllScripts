@@ -1,0 +1,29 @@
+# Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Jekyll dependencies
+.bundle/
+vendor/
+
+# Gemfile lock (optional - remove this line if you want to track it)
+Gemfile.lock
+
+# Ruby
+*.gem
+*.rbc
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log

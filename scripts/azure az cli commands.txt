@@ -1,0 +1,66 @@
+$GroupName=''
+$location =''
+$HubName =''
+$DeviceName= ''
+$sku = ''
+$policy =''
+$EventHubsCompatibleEndpoint=''
+$EventHubsCompatiblePath=''
+$IotHubSasKey=''
+
+
+az login
+az group create --name $GroupName--location $location
+
+
+az iot hub create --name $HubName     --resource-group $GroupName--sku $sku
+
+az iot hub show-connection-string --name $HubName --policy-name iothubowner --key primary  --resource-group $GroupName--output table
+
+az iot hub show-connection-string --name $HubName  --policy-name service --key primary  --resource-group $GroupName--output table
+
+az iot hub show-connection-string --name $HubName --policy-name service  --output table
+
+
+az iot hub device-identity create --hub-name $deviceName --device-id $deviceName
+
+az iot hub device-identity show-connection-string --hub-name $HubName    --device-id $DeviceName--output table
+
+
+
+
+
+az iot hub show --query properties.eventHubEndpoints.events.endpoint --name $deviceName
+
+az iot hub show --query properties.eventHubEndpoints.events.path --name  $deviceName
+
+az iot hub policy show --name iothubowner --query primaryKey --hub-name $deviceName
+
+az group delete --name GroupName
+az iot hub delete --name HubName   --resource-group GroupName
+
+
+$hubs = az iot hub list  -o json | Out-String
+
+$hubsy = az iot hub list  -o yaml | Out-String
+ConvertFrom-YAML $hubsy
+
+ $shortNames = Foreach ($i in $hubsy)
+  {
+     $i[0]
+  }
+
+ Foreach ($i in $hubsy)
+  {
+     $i
+  }
+
+$hubst = az iot hub list  -o tsv | Out-String
+$com =$hubst -split '\n'
+foreach ($i in $com) { ($i -split '\t')[3]}
+
+
+az iot hub device-identity list
+
+
+az account list --output table

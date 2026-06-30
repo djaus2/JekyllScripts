@@ -1,0 +1,1 @@
+./scripts/SaveClipboardImage.ps1
