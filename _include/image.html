@@ -1,0 +1,49 @@
+{% comment %}
+File: image.html in /_includes
+About:
+- Display an image in fullscreen mode, for desktop or 360 width for phone.
+- In phone mode can click on it and show in full width mode.
+Parameters:
+- imagefile:        The image file path relative to the blog site root
+- alt:              The image alt text
+- tag               The div Id (small is appended for phone div)
+Site Setting:
+- in _config.yml 
+- site.phonewidth:  The document width when to switch between full screen and phone mode
+  - typical value 680, found by trial an error.
+Notes:
+  - Jekyll values are rendered BEFORE any Javascript runs.
+  - Same file is used whether in desktop mode or phone mode.
+{% endcomment %}
+
+{% if include.imagefile contains 'http' %}
+  {% assign image_path = include.imagefile %}
+{% elsif include.imagefile contains '://' %}
+  {% assign image_path = include.imagefile %}
+{% else %}
+  {% assign image_path = site.baseurl | append: include.imagefile %}
+{% endif %}
+
+<div id="{{include.tag}}" style="Display:none">
+    <img src="{{image_path}}" alt="{{alt}}">
+</div>
+
+<div id="{{include.tag}}small" style="Display:none">
+    <a href="{{image_path}}" target="_blank"><img src="{{image_path}}" width="360" alt="{{alt}}"></a>
+<br /><small><i>Tap and rotate phone to enlarge.</i></small>
+</div>
+
+<script>
+    if (document.body.clientWidth >={{site.phonewidth}} )
+    {
+        document.getElementById('{{include.tag}}').style.display = "block";
+        document.getElementById('{{include.tag}}small').style.display = "none";
+    }
+    else
+    {
+        document.getElementById('{{include.tag}}').style.display = "none";
+        document.getElementById('{{include.tag}}small').style.display = "block";
+    }
+</script>
+
+    
