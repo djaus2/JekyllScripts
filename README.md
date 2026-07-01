@@ -1,8 +1,11 @@
 # Jekyll Scripts
 A collection of PowerShell scripts for a Jekyll blog site.
 
+## _includes
+Contains Jekyll-Markdown-Liquid scripts that are used by scripts in the `scripts/` folder. Click a filename to view the include. Will add descriptions here as each script as documented.
+
 ## Scripts
-The following scripts are in the `scripts/` folder. Click a filename to open the script. Add descriptions here as you document each script.
+The following scripts are in the `scripts/` folder. Click a filename to view the script. Add descriptions here as you document each script.
 
 - [aaa.ps1](scripts/aaa.ps1)
 - [add-frontmatter-smart.rb](scripts/add-frontmatter-smart.rb)
@@ -26,6 +29,7 @@ The following scripts are in the `scripts/` folder. Click a filename to open the
   - Stores the modified image in /media.
   - Liquid code for displaying image in a post is then generated
     -  and copied to the clipboard for pasting into the post.
+  - Needs image.html in /_includes for this to work.
 - [pasteImage.ps1](scripts/pasteImage.ps1)
 - [rename-githubpages-images.ps1](scripts/rename-githubpages-images.ps1)
 - [resetCounter.ps1](scripts/resetCounter.ps1)
