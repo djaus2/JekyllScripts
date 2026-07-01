@@ -2,7 +2,10 @@
 A collection of PowerShell scripts for a Jekyll blog site.
 
 ## _includes
-Contains Jekyll-Markdown-Liquid scripts that are used by scripts in the `scripts/` folder. Click a filename to view the include. Will add descriptions here as each script as documented.
+Contains Jekyll-Markdown-Liquid scripts that are used by scripts in the `scripts/` folder. Click a filename to view the include.
+
+- [image.html](_includes/image.html)
+  - Used by `paste-image.ps1` to generate the Liquid code for dynamically displaying an image in a post.
 
 ## Scripts
 The following scripts are in the `scripts/` folder. Click a filename to view the script. Add descriptions here as you document each script.
