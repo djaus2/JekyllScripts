@@ -26,6 +26,7 @@ The following scripts are in the `scripts/` folder. Click a filename to view the
 - [new-post-azs.ps1](scripts/new-post-azs.ps1)
 - [new-post-yml.ps1](scripts/new-post-yml.ps1)
 - [new-post.ps1](scripts/new-post.ps1)
+<a name="paste-image"></a>
 - [paste-image.ps1](scripts/paste-image.ps1)
   - Can start paste of an image from the clipboard into a Jekyll post
   - Prompts for image name and width (px)
