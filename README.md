@@ -6,7 +6,9 @@ Contains Jekyll-Markdown-Liquid scripts that are used by scripts in the `scripts
 
 <a name="image-html"></a>
 - [image.html](_includes/image.html)
-  - Used by `paste-image.ps1` to generate the Liquid code for dynamically displaying an image in a post.
+  - Used by `paste-image.ps1` to generate the Liquid code for dynamically displaying an image in a post. 
+    - Resizes the image on phone.
+    - On phone can tap and rotate phone the image to see it in full size.
 
 ## /scripts
 The following scripts are in the `scripts/` folder. Click a filename to view the script. Add descriptions here as you document each script.
