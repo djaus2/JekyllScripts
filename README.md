@@ -42,6 +42,7 @@ The following scripts are in the `scripts/` folder. Click a filename to view the
 - [resetCounter.ps1](scripts/resetCounter.ps1)
 - [resetCounterquick.ps1](scripts/resetCounterquick.ps1)
 - [SaveClipboardImage.ps1](scripts/SaveClipboardImage.ps1)
+  - ***USE THIS SCRIPT RATHER THAN THE PASTE IMAGE ONES***
 - [scbi.ps1](scripts/scbi.ps1)
 - [set-path.ps1](scripts/set-path.ps1)
 - [transform-image.ps1](scripts/transform-image.ps1)
